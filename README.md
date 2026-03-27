@@ -63,16 +63,4 @@ Visita `http://localhost:3000` en el navegador.
 - `src/app/countries/page.js`: posible ruta secundaria de países.
 - `src/components/`: componentes reutilizables (tarjetas, buscador, formulario).
 
-## Notas
-
-- Cambia el origen de datos (API REST / GraphQL / local JSON) en el servicio que uses.
-- Asegúrate de tener manejo de errores en fetch/axios para evitar fallos de UI.
-- Mejora la accesibilidad (alt en banderas, labels en inputs, roles en tarjetas).
-
----
-
-## Referencias de Next.js
-
-- [Next.js Docs](https://nextjs.org/docs)
-- [Deploy on Vercel](https://vercel.com/new)
 

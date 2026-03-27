@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Countries App
 
-## Getting Started
+Esta aplicación Next.js muestra información básica de países y provee herramientas de búsqueda y visualización. Está diseñada con lógica para:
 
-First, run the development server:
+- Mostrar lista de países
+- Tarjetas con:
+  - nombre
+  - bandera
+  - capital
+- Buscar país por nombre
+- Mostrar ubicación (lat/lng)
+- Mostrar moneda
+
+## Funcionalidades
+
+1. Mostrar lista de países
+   - Se carga sumario de cada país en tarjetas.
+   - Las tarjetas contienen nombre, bandera, capital, moneda y coordenadas.
+
+2. Tarjetas de país
+   - Nombre completo del país.
+   - Imagen de bandera.
+   - Capital.
+   - Latitud y longitud.
+   - Moneda(s).
+
+3. Búsqueda por nombre
+   - Filtro instantáneo por texto de país.
+   - Debounce en entrada para UX suave (si aplica).
+
+4. Ubicación (lat/lng)
+   - Se muestra latitud y longitud del país en la tarjeta.
+   - Se puede integrar con un mapa si se desea extender.
+
+5. Moneda
+   - Se listan las monedas oficiales en la tarjeta.
+   - Manejo de países con múltiples monedas.
+
+## Desarrollo
+
+### Requisitos
+
+- Node.js 18+ (recomendado)
+- npm / yarn / pnpm
+
+### Instalación
+
+```bash
+npm install
+```
+
+### Ejecutar en modo desarrollo
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visita `http://localhost:3000` en el navegador.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Estructura relevante
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/app/page.js`: lógica principal y renderizado de la lista.
+- `src/app/countries/page.js`: posible ruta secundaria de países.
+- `src/components/`: componentes reutilizables (tarjetas, buscador, formulario).
 
-## Learn More
+## Notas
 
-To learn more about Next.js, take a look at the following resources:
+- Cambia el origen de datos (API REST / GraphQL / local JSON) en el servicio que uses.
+- Asegúrate de tener manejo de errores en fetch/axios para evitar fallos de UI.
+- Mejora la accesibilidad (alt en banderas, labels en inputs, roles en tarjetas).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Referencias de Next.js
 
-## Deploy on Vercel
+- [Next.js Docs](https://nextjs.org/docs)
+- [Deploy on Vercel](https://vercel.com/new)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
